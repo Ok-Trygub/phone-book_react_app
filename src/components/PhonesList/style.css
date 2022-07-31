@@ -1,0 +1,40 @@
+header {
+  background-color: #26384c;
+}
+
+.phoneList {
+  background-color: #26384c;
+  color: white;
+  font-weight: normal;
+  font-size: 20px;
+}
+.phoneList_itemsWrapper {
+  margin-top: 20px;
+}
+.phoneList_title {
+  color: #6da2ff;
+  padding-bottom: 20px;
+}
+.phoneList_separator {
+  color: #3d4b5d;
+  opacity: 1;
+  border-top: 2px solid;
+  margin: 0;
+}
+.phoneList_item {
+  background-color: #3d4b5d;
+  color: white;
+  margin-bottom: 1px;
+  font-size: 18px;
+}
+.phoneList_item-position {
+  color: #6da2ff;
+}
+
+.addBtn {
+  border: none;
+  background-color: transparent;
+  margin-right: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

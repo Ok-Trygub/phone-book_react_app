@@ -1,4 +1,4 @@
-#### An implementation of the 'Phone Book' using:
+### An implementation of the "Phone Book" using:
 - React
 - React-router
 - Redux
