@@ -3,43 +3,33 @@ import { createSlice } from '@reduxjs/toolkit';
 export const contactsSlice = createSlice({
   name: 'contacts',
 
-  initialState: [
-    {
-      id: 1,
-      name: 'Vlad',
-      surname: 'Trygub',
-      phoneNumber: '123123123',
-      position: 'developer'
-    },
-    {
-      id: 2,
-      name: 'Andrey',
-      surname: 'Trygub',
-      phoneNumber: '123123123',
-      position: 'developer'
-    },
-    {
-      id: 3,
-      name: 'Ksenia',
-      surname: 'Trygub',
-      phoneNumber: '123123123',
-      position: 'developer'
-    },
-    {
-      id: 4,
-      name: 'Ilona',
-      surname: 'Trygub',
-      phoneNumber: '123123123',
-      position: 'developer'
-    },
-  ],
+  initialState: [],
 
   reducers: {
     addContact: (state, action) => {
       state.push(action.payload);
+    },
+
+    updateContact: (state, action) => {
+      const {
+        id,
+        firstName,
+        lastName,
+        phoneNumber,
+        position
+      } = action.payload;
+
+      const existingContact = state.find(contact => contact.id === id);
+      if (existingContact) {
+        existingContact.firstName = firstName;
+        existingContact.lastName = lastName;
+        existingContact.phoneNumber = phoneNumber;
+        existingContact.position = position;
+      }
     }
   }
+
 });
 
-export const { addContact } = contactsSlice.actions;
+export const { addContact, updateContact } = contactsSlice.actions;
 export default contactsSlice.reducer;
