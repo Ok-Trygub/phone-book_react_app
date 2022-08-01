@@ -15,7 +15,6 @@ const ContactData = () => {
 
   const navigate = useNavigate();
 
-
   const editContact = () => {
     navigate('editContact');
   };

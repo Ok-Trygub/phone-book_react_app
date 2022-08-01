@@ -46,7 +46,7 @@ const EditContact = () => {
             <ContactForm
               formInitialValues={formInitialValues}
               submitHandler={formSubmitHandler}
-              btnName="Edit"
+              btnName="Save"
             />
           </Col>
         </Row>
