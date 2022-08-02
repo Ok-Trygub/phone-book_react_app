@@ -19,6 +19,14 @@
   color: white;
 }
 
-.submitBtn{
-  font-size: 16px;
+.formBtn{
+  font-size: 14px;
+  padding: 5.5px 15px;
+}
+
+.validationError{
+  font-size: 10px;
+  font-weight: bold;
+  color: #f85c5c;
+  margin: 0;
 }

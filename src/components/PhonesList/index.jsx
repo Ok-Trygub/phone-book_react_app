@@ -20,7 +20,6 @@ const PhoneList = () => {
         navigate('contactData/' + id);
     }
 
-
     const renderContactItem = () => {
         return (
             <ListGroup>
@@ -40,7 +39,7 @@ const PhoneList = () => {
     return (
         <>
             <header>
-                <h1 className="d-flex justify-content-center phoneList_title m-0">Contacts</h1>
+                <h1 className="d-flex justify-content-center phoneList_title m-0">Phone Book</h1>
             </header>
 
             <main>

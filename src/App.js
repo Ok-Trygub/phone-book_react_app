@@ -4,6 +4,7 @@ import PhoneList from './components/PhonesList';
 import AddContact from './routes/AddContact';
 import ContactData from "./routes/ContactData";
 import EditContact from './routes/EditContact'
+import ConfirmRmContact from './routes/ConfirmRemoveContact/ConfirmRmContact';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path="newContact" element={<AddContact/>}/>
                 <Route path="contactData/:id" element={<ContactData/>}/>
               <Route path="contactData/:id/editContact" element={<EditContact/>}/>
+              <Route path="contactData/:id/editContact/confirmRemoveContact" element={<ConfirmRmContact/>}/>
             </Routes>
         </div>
     );

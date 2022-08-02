@@ -33,6 +33,22 @@ const EditContact = () => {
     navigate('/');
   };
 
+  const removeContactHandler = () => {
+    navigate('confirmRemoveContact');
+  };
+
+  const removeContactElem = () => {
+    return (
+      <div>
+        <button className="removeContactBtn"
+                onClick={removeContactHandler}
+        >Remove Contact ?
+        </button>
+        <hr className="m-0"/>
+      </div>
+    );
+  };
+
   return (
     <div className="contactForm">
       <Container>
@@ -47,6 +63,7 @@ const EditContact = () => {
               formInitialValues={formInitialValues}
               submitHandler={formSubmitHandler}
               btnName="Save"
+              removeContact={removeContactElem}
             />
           </Col>
         </Row>

@@ -26,10 +26,17 @@ export const contactsSlice = createSlice({
         existingContact.phoneNumber = phoneNumber;
         existingContact.position = position;
       }
+    },
+
+    deleteContact: (state, action) => {
+      return state.filter(contact => contact.id !== action.payload.id);
     }
   }
-
 });
 
-export const { addContact, updateContact } = contactsSlice.actions;
+export const {
+  addContact,
+  updateContact,
+  deleteContact
+} = contactsSlice.actions;
 export default contactsSlice.reducer;

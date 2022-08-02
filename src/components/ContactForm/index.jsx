@@ -4,8 +4,11 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 const ContactForm = (props) => {
+
+  const navigate = useNavigate();
 
   const validationSchema = Yup.object({
     firstName: Yup.string()
@@ -95,10 +98,16 @@ const ContactForm = (props) => {
             {touched.position && errors.position &&
               <p className="validationError">{errors.position}</p>}
           </Form.Group>
-          <div className="d-flex justify-content-center">
+
+          {props.removeContact ? props.removeContact() : null}
+
+          <div className="d-flex justify-content-between mt-3">
+            <Button variant="light" className="formBtn"
+                    onClick={() => navigate('/')}>Cancel</Button>
+
             <Button variant="primary"
                     type="submit"
-                    className="mt-3 submitBtn"
+                    className="formBtn"
             >
               {props.btnName}
             </Button>
