@@ -1,76 +1,116 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.scss';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
-import {useSelector} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import AddIcon from './AddIcon';
+import SearchIcon from './SearchIcon';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 const PhoneList = () => {
-    const contacts = useSelector(state => state.contacts);
-    const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState('');
 
-    const addContact = () => {
-        navigate('newContact');
-    };
+  const contacts = useSelector(state => state.contacts);
+  const navigate = useNavigate();
 
-    const showContactData = (id) => () => {
-        navigate('contactData/' + id);
+  const addContact = () => {
+    navigate('newContact');
+  };
+
+  const showContactData = (id) => () => {
+    navigate('contactData/' + id);
+  };
+
+  const searchHandler = (event) => {
+    setSearchValue(event.target.value);
+  };
+
+  const filterContacts = contacts.filter(contact => {
+    if (contact.firstName.toLowerCase()
+      .includes(searchValue.toLowerCase())) {
+      return contact.firstName;
     }
 
-    const renderContactItem = () => {
-        return (
-            <ListGroup>
-                {contacts.map(item => (
-                    <ListGroup.Item
-                        onClick={showContactData(item.id)}
-                        className="phoneList_item"
-                        key={item.id}>{item.firstName}
-                        <span className="phoneList_item-position">{' ' + item.lastName}</span>
-                    </ListGroup.Item>
-                ))
-                }
-            </ListGroup>
-        );
-    };
+    if (contact.phoneNumber.toLowerCase()
+      .includes(searchValue.toLowerCase())) {
+      return contact.phoneNumber;
+    }
+  });
 
+  const resetSearchHandler = () => {
+    setSearchValue('');
+  };
+
+  const renderContactItem = () => {
     return (
-        <>
-            <header>
-                <h1 className="d-flex justify-content-center phoneList_title m-0">Phone Book</h1>
-            </header>
-
-            <main>
-                <div className="phoneList">
-                    <Container>
-
-                        <Row className="d-flex justify-content-center">
-                            <Col xs={6}>
-                                <hr className="phoneList_separator"/>
-
-                                <div className="d-flex justify-content-end">
-                                    <button className="addBtn p-0" onClick={addContact}>
-                                        <AddIcon/>
-                                        <span className='addBtn-text'>Add Contact</span>
-                                    </button>
-                                </div>
-                                <hr className="phoneList_separator"/>
-                            </Col>
-                        </Row>
-
-                        <Row className="d-flex justify-content-center">
-                            <Col xs={6} className="phoneList_itemsWrapper">
-                                {contacts.length ? renderContactItem() : <div><p>Contacts not found.</p></div>}
-                            </Col>
-                        </Row>
-
-                    </Container>
-                </div>
-            </main>
-        </>
+      <ListGroup>
+        {filterContacts.map(item => (
+          <ListGroup.Item
+            onClick={showContactData(item.id)}
+            className="phoneList_item"
+            key={item.id}>{item.firstName}
+            <span>{' ' + item.lastName}</span>
+          </ListGroup.Item>
+        ))
+        }
+      </ListGroup>
     );
+  };
+
+  return (
+    <>
+      <header>
+        <h1 className="d-flex justify-content-center phoneList_title m-0">Phone Book</h1>
+      </header>
+
+      <main>
+        <div className="phoneList">
+          <Container>
+            <Row className="d-flex justify-content-center">
+              <Col xs={6} className="phoneList_itemsWrapper">
+
+                <div className="d-flex justify-content-between align-items-center mb-3">
+
+                  <InputGroup>
+                    <Form.Control
+                      aria-label="Recipient's username"
+                      aria-describedby="basic-addon2"
+                      className="phoneList_searchInput"
+                      value={searchValue}
+                      onChange={searchHandler}
+                      disabled={!contacts.length}
+                    />
+                    <SearchIcon/>
+                    <Button variant="outline-secondary" id="button-addon2"
+                            className="searchBtn"
+                            disabled={!contacts.length}
+                            onClick={resetSearchHandler}
+                    >
+                      Reset
+                    </Button>
+                  </InputGroup>
+
+                  <button className="addBtn p-0" onClick={addContact}>
+                    <AddIcon/>
+                    <span className="addBtn-text">Add Contact</span>
+                  </button>
+                </div>
+                <hr className="mb-2"/>
+                {contacts.length ? renderContactItem() : <Row>
+                  <p className="mt-5">Contacts not found.</p>
+                </Row>}
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </main>
+    </>
+  );
 };
 
 export default PhoneList;
