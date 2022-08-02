@@ -88,7 +88,7 @@ const PhoneList = () => {
                     <SearchIcon/>
                     <Button variant="outline-secondary" id="button-addon2"
                             className="searchBtn"
-                            disabled={!contacts.length}
+                            disabled={!searchValue.length}
                             onClick={resetSearchHandler}
                     >
                       Reset

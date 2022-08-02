@@ -1,6 +1,6 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import PhoneList from './components/PhonesList';
+import PhoneList from './routes/PhonesList';
 import AddContact from './routes/AddContact';
 import ContactData from "./routes/ContactData";
 import EditContact from './routes/EditContact'
