@@ -2,29 +2,30 @@ header {
   background-color: #26384c;
 }
 
+.phoneListTitle {
+  color: #6da2ff;
+  padding-top: 40px;
+}
+
 .phoneList {
   background-color: #26384c;
   color: white;
   font-weight: normal;
   font-size: 20px;
 }
-.phoneList_itemsWrapper {
+.phoneList__itemsWrapper {
   background-color: #232b35;
   border-radius: 0.375rem;
   margin-top: 20px;
   padding: 15px;
 }
-.phoneList_title {
-  color: #6da2ff;
-  padding-top: 40px;
-}
-.phoneList_item {
+.phoneList__item {
   background-color: #3d4b5d;
   color: white;
   margin-bottom: 3px;
   font-size: 18px;
 }
-.phoneList_searchInput, .phoneList_searchInput:focus {
+.phoneList__searchInput, .phoneList_searchInput:focus {
   background-color: transparent;
   border: 1px solid #3d4b5d;
   box-shadow: none;
@@ -33,7 +34,7 @@ header {
   padding: 1px 27px;
   font-size: 14px;
 }
-.phoneList_searchInput[disabled] {
+.phoneList__searchInput[disabled] {
   background-color: transparent;
 }
 
@@ -68,4 +69,4 @@ header {
   padding-left: 5px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=ContactData.css.map */

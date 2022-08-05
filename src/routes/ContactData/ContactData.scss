@@ -1,29 +1,12 @@
-.contactData {
-  margin-top: 40px;
-  background-color: #26384c;
-}
-.contactData_wrapper {
-  background-color: #232b35;
-  color: #6da2ff;
-  border-radius: 0.375rem;
-  padding: 15px;
-}
-.contactData_itemsWrapper {
+.editContactWrapper {
   background-color: #3d4b5d;
   border-radius: 0.375rem;
   padding: 10px 15px;
   font-size: 12px;
   font-weight: 500;
 }
-.contactData_title {
-  font-size: 18px;
-  color: white;
-  padding-bottom: 10px;
-}
-.contactData_separator {
-  margin: 5px 0 5px;
-}
-.contactData_item {
+
+.dataItem {
   color: white;
   font-size: 16px;
   font-weight: 400;
@@ -57,5 +40,3 @@ p {
 .editBtn-icon {
   margin-bottom: 4px;
 }
-
-/*# sourceMappingURL=style.css.map */

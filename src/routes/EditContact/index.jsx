@@ -3,10 +3,8 @@ import './style.scss';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateContact } from '../../store/slices/contacts';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import ContactForm from '../../components/ContactForm';
+import ContactForm from '../../components/ContactForm/ContactForm';
+import ContactView from '../../templates/ContactView';
 
 const EditContact = () => {
   const navigate = useNavigate();
@@ -49,26 +47,22 @@ const EditContact = () => {
     );
   };
 
-  return (
-    <div className="contactForm">
-      <Container>
-        <Row className="d-flex justify-content-center">
-          <Col xs={5} className="contactForm_wrapper align-items-center">
-            <h1 className="contactForm_title m-0 d-flex justify-content-center">Edit Contact</h1>
-            <hr/>
-            <p className="contactForm_explanation">Enter contact name, phone number and position to
-              edit it in the Phone Book</p>
+  const templateProps = {
+    title: 'Edit Contact',
+  };
 
-            <ContactForm
-              formInitialValues={formInitialValues}
-              submitHandler={formSubmitHandler}
-              btnName="Save"
-              removeContact={removeContactElem}
-            />
-          </Col>
-        </Row>
-      </Container>
-    </div>
+  return (
+    <ContactView {...templateProps}>
+      <p className="formExplanation">Enter contact name, phone number and position to
+        edit it in the Phone Book</p>
+
+      <ContactForm
+        formInitialValues={formInitialValues}
+        submitHandler={formSubmitHandler}
+        btnName="Save"
+        removeContact={removeContactElem}
+      />
+    </ContactView>
   );
 };
 

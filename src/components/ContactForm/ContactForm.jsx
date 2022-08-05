@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.scss';
+import './ContactForm.scss';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import Form from 'react-bootstrap/Form';
@@ -25,7 +25,6 @@ const ContactForm = (props) => {
 
     phoneNumber: Yup.number()
       .min(3, 'Must be 3 characters or more')
-      // .max(50, 'Must be 50 characters or less')
       .required('This field is required'),
 
     position: Yup.string()

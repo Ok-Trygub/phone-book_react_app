@@ -1,12 +1,10 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useNavigate, useParams } from 'react-router-dom';
-import './style.scss';
+import './ConfirmRmContact.scss';
 import { deleteContact } from '../../store/slices/contacts';
 import { useDispatch, useSelector } from 'react-redux';
+import ContactView from '../../templates/ContactView';
 
 const ConfirmRmContact = () => {
 
@@ -25,43 +23,34 @@ const ConfirmRmContact = () => {
     navigate('/');
   };
 
+  const templateProps = {
+    title: 'Delete Contact',
+  };
+
   return (
     <main>
-      <div className="confirmDelete">
-        <Container>
-          <Row className="d-flex justify-content-center">
-            <Col xs={6} className="confirmDelete_wrapper">
+      <ContactView {...templateProps}>
+        <div>
+          <p className="confirmQuestion mb-3 text-center p-1">Are you sure ? </p>
+        </div>
 
-              <div className="confirmDelete_wrapper-bg">
-                <Row className="text-center">
-                  <p className="mt-1">Delete Contact</p>
-                </Row>
+        <div className="d-flex justify-content-center mt-2">
+          <Button variant="light"
+                  className="returnBtn"
+                  onClick={() => navigate(-1)}
+          >
+            Cancel
+          </Button>
 
-                <hr className="mt-2 mb-2"/>
-                <Row className="text-center">
-                  <p className="confirmDelete_text mb-1">Are you sure ? </p>
-                </Row>
-              </div>
+          <Button variant="primary"
+                  className="confirmBtn"
+                  onClick={confirmRemoveHandler}
+          >
+            Confirm
+          </Button>
+        </div>
 
-              <div className="d-flex justify-content-center mt-2">
-                <Button variant="light"
-                        className="returnBtn"
-                        onClick={() => navigate(-1)}
-                >
-                  Cancel
-                </Button>
-
-                <Button variant="primary"
-                        className="confirmBtn"
-                        onClick={confirmRemoveHandler}
-                >
-                  Confirm
-                </Button>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+      </ContactView>
     </main>
   );
 };

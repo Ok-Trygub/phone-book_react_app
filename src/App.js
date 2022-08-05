@@ -1,8 +1,8 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import PhoneList from './routes/PhonesList';
-import AddContact from './routes/AddContact';
-import ContactData from "./routes/ContactData";
+import AddContact from './routes/AddContact/AddContact';
+import ContactData from "./routes/ContactData/ContactData";
 import EditContact from './routes/EditContact'
 import ConfirmRmContact from './routes/ConfirmRemoveContact/ConfirmRmContact';
 

@@ -6,8 +6,8 @@ import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import AddIcon from './AddIcon';
-import SearchIcon from './SearchIcon';
+import AddIcon from '../../components/UI/AddIcon';
+import SearchIcon from '../../components/UI/SearchIcon';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -52,7 +52,7 @@ const PhoneList = () => {
         {filterContacts.map(item => (
           <ListGroup.Item
             onClick={showContactData(item.id)}
-            className="phoneList_item"
+            className="phoneList__item"
             key={item.id}>{item.firstName}
             <span>{' ' + item.lastName}</span>
           </ListGroup.Item>
@@ -65,14 +65,14 @@ const PhoneList = () => {
   return (
     <>
       <header>
-        <h1 className="d-flex justify-content-center phoneList_title m-0">Phone Book</h1>
+        <h1 className="d-flex justify-content-center phoneListTitle m-0">Phone Book</h1>
       </header>
 
       <main>
         <div className="phoneList">
           <Container>
             <Row className="d-flex justify-content-center">
-              <Col xs={6} className="phoneList_itemsWrapper">
+              <Col xs={6} className="phoneList__itemsWrapper">
 
                 <div className="d-flex justify-content-between align-items-center mb-3">
 
@@ -80,7 +80,7 @@ const PhoneList = () => {
                     <Form.Control
                       aria-label="Recipient's username"
                       aria-describedby="basic-addon2"
-                      className="phoneList_searchInput"
+                      className="phoneList__searchInput"
                       value={searchValue}
                       onChange={searchHandler}
                       disabled={!contacts.length}
