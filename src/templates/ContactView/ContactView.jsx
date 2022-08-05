@@ -12,7 +12,7 @@ const ContactView = (props) => {
     <div className='phoneBookWrapper'>
       <Container>
         <Row className="d-flex justify-content-center">
-          <Col xs={6} className="phoneBookWrapper__col align-items-center">
+          <Col xs={5} className="phoneBookWrapper__col align-items-center">
             <h1 className="phoneBookWrapper__title m-0 d-flex justify-content-center">{title}</h1>
             <hr/>
             {props.children}

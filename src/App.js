@@ -1,9 +1,9 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import PhoneList from './routes/PhonesList';
+import PhoneList from './routes/PhonesList/PhoneList';
 import AddContact from './routes/AddContact/AddContact';
 import ContactData from "./routes/ContactData/ContactData";
-import EditContact from './routes/EditContact'
+import EditContact from './routes/EditContact/EditContact'
 import ConfirmRmContact from './routes/ConfirmRemoveContact/ConfirmRmContact';
 
 function App() {
