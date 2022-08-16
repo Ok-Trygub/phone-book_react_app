@@ -52,7 +52,7 @@ const ContactData = () => {
         <div className="d-flex justify-content-end">
           <Button variant="primary"
                   className="mt-2 returnBtn"
-                  onClick={() => navigate('/')}
+                  onClick={() => navigate(-1)}
           >
             Return
           </Button>

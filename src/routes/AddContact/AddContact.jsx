@@ -28,7 +28,7 @@ const AddContact = () => {
     }));
     actions.resetForm();
 
-    navigate('/');
+    navigate(-1);
   };
 
   const templateProps = {

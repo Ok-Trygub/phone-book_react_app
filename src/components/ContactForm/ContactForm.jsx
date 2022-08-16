@@ -102,7 +102,7 @@ const ContactForm = (props) => {
 
           <div className="d-flex justify-content-between mt-3">
             <Button variant="light" className="formBtn"
-                    onClick={() => navigate('/')}>Cancel</Button>
+                    onClick={() => navigate(-1)}>Cancel</Button>
 
             <Button variant="primary"
                     type="submit"

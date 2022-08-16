@@ -28,7 +28,7 @@ const EditContact = () => {
     }));
     actions.resetForm();
 
-    navigate('/');
+    navigate(-1);
   };
 
   const removeContactHandler = () => {

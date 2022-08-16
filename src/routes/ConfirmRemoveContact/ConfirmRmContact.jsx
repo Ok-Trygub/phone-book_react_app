@@ -20,7 +20,7 @@ const ConfirmRmContact = () => {
     dispatch(deleteContact(
       currentContact
     ));
-    navigate('/');
+    navigate(-3);
   };
 
   const templateProps = {
