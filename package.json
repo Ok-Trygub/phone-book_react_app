@@ -2,7 +2,7 @@
   "name": "phone_book",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ok-trygub.github.io/phone-book_react_app/",
+  "homepage": ".",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "bootstrap": "^5.2.0",
