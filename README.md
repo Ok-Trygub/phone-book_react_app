@@ -13,3 +13,9 @@
 ![Alt-текст](./src/assets/images/PhoneBook_2.png)
 
 ![Alt-текст](./src/assets/images/PhoneBook_3.png)
+
+![Alt-текст](./src/assets/images/PhoneBook_4.png)
+
+![Alt-текст](./src/assets/images/PhoneBook_5.png)
+
+![Alt-текст](./src/assets/images/PhoneBook_6.png)
